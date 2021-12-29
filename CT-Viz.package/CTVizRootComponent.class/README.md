@@ -1,0 +1,1 @@
+The Root Component class for the CTViz app.

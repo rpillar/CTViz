@@ -1,0 +1,15 @@
+{
+	"commentStamp" : "",
+	"super" : "WAComponent",
+	"category" : "CT-Viz",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"messageString",
+		"messageType",
+		"wasShown"
+	],
+	"name" : "CTVizMessageComponent",
+	"type" : "normal"
+}

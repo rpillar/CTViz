@@ -1,0 +1,3 @@
+code-critics
+ruleLongMethodsRuleV1FalsePositive
+	^ #(#(#(#RGMethodDefinition #(#CTVizBodyComponent #renderLoadDatasetFormOn: #false)) #'2021-10-07T19:21:40.205783+01:00') #(#(#RGMethodDefinition #(#CTVizBodyComponent #renderSummmayDatasetOn: #false)) #'2021-10-09T17:38:48.192668+01:00') #(#(#RGMethodDefinition #(#CTVizBodyComponent #renderDataTablesScriptOn: #false)) #'2021-11-24T19:56:13.639045+00:00') #(#(#RGMethodDefinition #(#CTVizBodyComponent #scriptSummaryChart #false)) #'2021-12-17T22:03:46.429536+00:00') #(#(#RGMethodDefinition #(#CTVizBodyComponent #renderSummaryChartOn: #false)) #'2021-12-17T22:06:38.543339+00:00') )

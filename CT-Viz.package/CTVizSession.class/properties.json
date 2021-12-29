@@ -1,0 +1,14 @@
+{
+	"commentStamp" : "RichardPillar 8/26/2021 19:41",
+	"super" : "WASession",
+	"category" : "CT-Viz",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"dataframe",
+		"teapot"
+	],
+	"name" : "CTVizSession",
+	"type" : "normal"
+}

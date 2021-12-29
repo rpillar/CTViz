@@ -1,0 +1,15 @@
+{
+	"commentStamp" : "RichardPillar 9/3/2021 18:32",
+	"super" : "WAComponent",
+	"category" : "CT-Viz",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"dataframe",
+		"fileName",
+		"messageComponent"
+	],
+	"name" : "CTVizBodyComponent",
+	"type" : "normal"
+}

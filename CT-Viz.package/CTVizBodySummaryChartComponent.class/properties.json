@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "",
+	"super" : "WAComponent",
+	"category" : "CT-Viz",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"data"
+	],
+	"name" : "CTVizBodySummaryChartComponent",
+	"type" : "normal"
+}

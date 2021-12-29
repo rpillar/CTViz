@@ -1,0 +1,1 @@
+Seaside Session class for the CTViz app.

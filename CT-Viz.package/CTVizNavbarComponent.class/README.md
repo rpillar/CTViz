@@ -1,0 +1,1 @@
+The 'navbar' component for the CTViz application.

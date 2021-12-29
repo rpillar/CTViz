@@ -1,0 +1,13 @@
+{
+	"instance" : {
+		"bodyComponent" : "RichardPillar 9/3/2021 18:31",
+		"bodyComponent:" : "RichardPillar 9/3/2021 18:31",
+		"navbarComponent:" : "RichardPillar 9/1/2021 22:48",
+		"initialize" : "RichardPillar 9/3/2021 21:27",
+		"updateRoot:" : "RichardPillar 9/25/2021 18:42",
+		"renderContentOn:" : "RichardPillar 9/18/2021 22:37",
+		"style" : "RichardPillar 12/1/2021 22:21",
+		"navbarComponent" : "RichardPillar 9/1/2021 22:48"
+	},
+	"class" : { }
+}
