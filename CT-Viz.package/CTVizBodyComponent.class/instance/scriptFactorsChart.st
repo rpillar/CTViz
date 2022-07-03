@@ -1,21 +1,21 @@
 rendering
-scriptSummaryChart
+scriptFactorsChart
 
 	| chart config div jq jsn layout s1 t1 |
 
 	jq := JQueryClass new.
 	
-	jsn := JSNamedFunction named: 'displayPlot'.
+	jsn := JSNamedFunction named: 'displayFactorsPlot'.
 	jsn return: true.
-	jsn arguments: #(data field).
+	jsn arguments: #(d1 d2 field).
 	
-	div := ( JSStream on: 'field + ''Div''' ).
+	div := ( JSStream on: 'field + ''FactorsDiv''' ).
 	
 	t1 := PlotlyTrace new.
-	t1 x: ( JSStream on: '$.parseJSON(data)' ).
-	t1 type: 'histogram'.
-	t1 histfunc: 'count'.
-	t1 opacity: 0.5.
+	t1 x: ( JSStream on: '$.parseJSON(da1)' ).
+	t1 type: 'bar'.
+	t1 x: ( JSStream on: '$.parseJSON(d1)' ).
+	t1 y: ( JSStream on: '$.parseJSON(d2)' ).
 	
 	layout := PlotlyLayout new.
 	layout title text: ( JSStream on: 'field' ).

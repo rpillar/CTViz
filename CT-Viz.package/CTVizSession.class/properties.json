@@ -7,6 +7,8 @@
 	"classvars" : [ ],
 	"instvars" : [
 		"dataframe",
+		"delimiter",
+		"factors",
 		"teapot"
 	],
 	"name" : "CTVizSession",

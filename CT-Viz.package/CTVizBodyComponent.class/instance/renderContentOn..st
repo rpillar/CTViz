@@ -21,3 +21,8 @@ renderContentOn: html
 						self renderLoadDatasetFormOn: html.
 				]
 		].
+	
+	"file settings modal"
+	self renderFileSettingsModalOn: html.
+	
+	html document addLoadScript: ( ( JSStream on:	'$(''.modal'').modal({outDuration:300,opacity:.4})' ) ).

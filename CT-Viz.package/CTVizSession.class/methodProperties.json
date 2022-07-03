@@ -1,9 +1,13 @@
 {
 	"instance" : {
-		"initialize" : "RichardPillar 12/27/2021 20:45",
-		"teapot" : "RichardPillar 12/24/2021 09:45",
-		"dataframe" : "RichardPillar 12/27/2021 12:41",
+		"factors:" : "RichardPillar 1/29/2022 21:26",
 		"teapot:" : "RichardPillar 12/24/2021 09:45",
+		"delimiter:" : "RichardPillar 1/29/2022 21:26",
+		"initialize" : "RichardPillar 3/5/2022 18:40",
+		"teapot" : "RichardPillar 12/24/2021 09:45",
+		"delimiter" : "RichardPillar 1/29/2022 21:26",
+		"dataframe" : "RichardPillar 12/27/2021 12:41",
+		"factors" : "RichardPillar 1/29/2022 21:26",
 		"dataframe:" : "RichardPillar 12/27/2021 12:41"
 	},
 	"class" : { }

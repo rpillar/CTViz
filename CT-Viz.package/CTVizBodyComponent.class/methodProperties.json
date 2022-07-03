@@ -1,21 +1,26 @@
 {
 	"instance" : {
 		"validateFile" : "RichardPillar 9/26/2021 20:20",
-		"dataframe:" : "RichardPillar 9/15/2021 21:59",
-		"scriptFormatFunction" : "RichardPillar 12/28/2021 20:00",
-		"renderContentOn:" : "RichardPillar 12/12/2021 21:23",
-		"fileName:" : "RichardPillar 9/17/2021 17:58",
 		"initialize" : "RichardPillar 12/27/2021 12:48",
-		"dataframe" : "RichardPillar 9/15/2021 21:59",
-		"renderLoadDatasetFormOn:" : "RichardPillar 9/27/2021 23:10",
-		"renderSummmayDatasetOn:" : "RichardPillar 12/27/2021 12:47",
+		"scriptFactorsChart" : "RichardPillar 3/1/2022 18:00",
+		"renderDataTablesScriptOn:" : "RichardPillar 6/5/2022 19:40",
+		"delimiter:" : "RichardPillar 1/14/2022 18:38",
+		"scriptSummaryChart" : "RichardPillar 2/14/2022 19:05",
 		"fileName" : "RichardPillar 9/17/2021 17:58",
-		"scriptEventListenerOpenCloseRow" : "RichardPillar 12/28/2021 18:13",
+		"dataframe" : "RichardPillar 9/15/2021 21:59",
+		"fileName:" : "RichardPillar 9/17/2021 17:58",
+		"dataframe:" : "RichardPillar 9/15/2021 21:59",
+		"receiveFile" : "RichardPillar 6/4/2022 14:39",
 		"messageComponent" : "RichardPillar 9/17/2021 20:47",
+		"scriptFormatFunction" : "RichardPillar 6/5/2022 20:01",
+		"renderLoadDatasetFormOn:" : "RichardPillar 2/14/2022 20:25",
 		"messageComponent:" : "RichardPillar 9/17/2021 20:47",
-		"receiveFile" : "RichardPillar 12/27/2021 12:43",
-		"renderDataTablesScriptOn:" : "RichardPillar 12/27/2021 12:45",
-		"scriptSummaryChart" : "RichardPillar 12/28/2021 19:52"
+		"renderFileSettingsModalOn:" : "RichardPillar 1/23/2022 22:17",
+		"delimiter" : "RichardPillar 1/14/2022 18:38",
+		"renderSummmayDatasetOn:" : "RichardPillar 2/14/2022 20:50",
+		"scriptEventListenerOpenCloseRow" : "RichardPillar 6/5/2022 17:02",
+		"scriptSummaryString" : "RichardPillar 6/4/2022 13:25",
+		"renderContentOn:" : "RichardPillar 1/23/2022 22:24"
 	},
 	"class" : { }
 }

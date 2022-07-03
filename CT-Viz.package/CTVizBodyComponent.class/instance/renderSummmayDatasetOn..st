@@ -22,6 +22,7 @@ renderSummmayDatasetOn: html
 		].
 	
 	html div 
+		id: 'summary-data-container';
 		class: 'container';
 		with: [
 			html div 
@@ -51,7 +52,7 @@ renderSummmayDatasetOn: html
 				with: [  
 					html table 
 						id: 'summary-table';
-						class: 'responsive striped';
+						class: 'responsive hover row-border order-column';
 						with: [  
 							html tableHead 
 								with: [  

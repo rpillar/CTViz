@@ -1,18 +1,19 @@
 rendering
 scriptEventListenerOpenCloseRow
 
-	"Return a fundtion - Add event listener for opening and closing details. Use in conjunction with the format function."
+	"Return a function - Add event listener for opening and closing details. Use in conjunction with the format function."
 	
-	| jq js jsCond1 jsCond2 jsFunction jsTrue jsFalse jsField jsPlot url |
+	| jq js jsCondIsShown jsFunction jsCondIsShownTrue jsCondIsShownFalse jsField jsFactorsPlot jsPlot urlf urlj |
 	js := JSStream new.
 	jq := JQueryClass new.
 	
-	url := 'http://localhost:8088/jsondata/' surroundedBy: '"'.
-
-	jsCond1 := ( JSStream on: 'row.child.isShown()' ).
-	jsTrue := ( JSStream on: 'row.child.hide()' ),
+	urlj := 'http://localhost:8088/jsondata/' surroundedBy: '"'.
+	urlf := 'http://localhost:8088/factorsdata/' surroundedBy: '"'.
+	
+	jsCondIsShown := ( JSStream on: 'row.child.isShown()' ).
+	jsCondIsShownTrue := ( JSStream on: 'row.child.hide()' ),
 		( ( JSStream on: 'tr' ) call: 'removeClass'  with: 'shown' ).
-	jsFalse := 
+	jsCondIsShownFalse := 
 		( ( JSStream on: 'row' ) 
 			call: 'child'  
 			with: ( ( JSStream on: 'format' ) apply: { ( JSStream on: 'row' ) call: 'data' } ); 
@@ -20,18 +21,30 @@ scriptEventListenerOpenCloseRow
 		( ( JSStream on: 'tr' ) call: 'addClass'  with: 'shown' ),
 		( ( ( jq this next: 'td' ) text ) assignLocalTo: 'field' ).
 	jsField := ( ( jq this next: 'td' ) text ).
+	jsFactorsPlot :=
+		( ( jq ajax ) type: 'GET'; url: ( JSStream on: urlf, ' + field' ); 
+			onSuccess: ( ( 
+				( JSStream on: 'displayFactorsPlot(data, field)' ) 
+					condition: ( JSStream on: 'typeof( $.parseJSON(data)[0] ) == ''string''' ) 
+					else: ( 
+						( JSStream on: 'displaySummary(data, field)' )
+					)
+				) asFunction: #(data status) ) ).
 	jsPlot :=
-		( JSStream on: 'console.log(''field is : '', field)' ),
-		( JSStream on: 'console.log(', url, ' + field)' ),
-		( ( jq ajax ) type: 'GET'; url: ( JSStream on: url, ' + field' ); 
-			onSuccess: ( ( JSStream on: 'displayPlot(data, field)' ) asFunction: #(data status) ) ).
-	jsCond2 := ( JSStream on: 'typeof(field) === ''string''').
+		( ( jq ajax ) type: 'GET'; url: ( JSStream on: urlj, ' + field' ); 
+			onSuccess: ( ( 
+				( JSStream on: 'displayPlot(data, field)' ) 
+					condition: ( JSStream on: 'typeof( $.parseJSON(data)[0] ) == ''number''' ) 
+					else: ( 
+						( JSStream on: 'displaySummary(data, field)' )
+					)
+				) asFunction: #(data status) ) ).
 		
 	js nextPutAll: ( ( ( jq this closest: 'tr' ) assignLocalTo: 'tr' ) asJavascript );
 		nextPut: $;;
 		nextPutAll: 'var row = table.row(tr)';
 		nextPut: $;;
-		nextPutAll: ( ( jsTrue condition: jsCond1 else: ( jsFalse, ( jsPlot condition: jsCond2 ) ) ) asJavascript );
+		nextPutAll: ( ( jsCondIsShownTrue condition: jsCondIsShown else: ( jsCondIsShownFalse, jsPlot ) ) asJavascript );
 		nextPut: $;.
 	
 	jsFunction := ( js contents ) asFunction: #().
