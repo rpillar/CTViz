@@ -19,7 +19,7 @@ renderContentOn: html
 				with: [  
 						self messageComponent messageString: 'Enter file path / name.'; messageType: 'info'.
 						self renderLoadDatasetFormOn: html.
-				]
+				].
 		].
 	
 	"file settings modal"

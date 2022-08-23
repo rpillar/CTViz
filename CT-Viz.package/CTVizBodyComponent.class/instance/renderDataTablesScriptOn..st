@@ -1,7 +1,7 @@
 rendering
 renderDataTablesScriptOn: html
 
-	| c1 c2 colNames cols data dataStats dataSummary dt dto dts dtu evt f fcts fmt g jq plt sc x1 |
+	| c1 c2 colNames cols data dataStats dataSummary dt dto dts dtu evt f fmt g jq plt ptr sc x1 |
 	
 	"summary data from the dataframe"
 	dataSummary := self dataframe summarize.
@@ -36,11 +36,12 @@ renderDataTablesScriptOn: html
 	fmt := self scriptFormatFunction.
 	evt := self scriptEventListenerOpenCloseRow.
 	plt := self scriptSummaryChart.
+	ptr := self scriptSummaryRangeChart.
 	dts := self scriptSummaryString.
-	fcts := self scriptFactorsChart.
+	"fcts := self scriptFactorsChart."
 	
 	"document.ready ...."
-	f := ( x1, evt, plt, dts, fcts ).
+	f := ( x1, evt, plt, ptr, dts ).
 
 	jq := JQueryClass new.
 	g := ( jq document call: 'ready' with: f ) asJavascript.

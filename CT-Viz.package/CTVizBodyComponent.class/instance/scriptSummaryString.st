@@ -1,4 +1,4 @@
-rendering
+script
 scriptSummaryString
 
 	| formatDataString jq jsn st1 |
@@ -36,7 +36,8 @@ scriptSummaryString
 							style: 'background-color: #e0f2f1;';
 							with: ( JSStream on: '${stringValues}' ).
 					].
-				( self session factors = 'Y' ) ifTrue: [  
+				"code removed for now - not implemented"
+				"( self session factors = 'Y' ) ifTrue: [  
 					html tableRow
 						style: 'background-color: #e0f2f1;';
 						with: [  
@@ -44,7 +45,7 @@ scriptSummaryString
 								id: ( JSStream on: '${d.variable}FactorsDiv' );
 								style: 'background-color: #e0f2f1;'.
 						].
-				].
+				]."
 			]
 		].
 	

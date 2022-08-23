@@ -1,9 +1,9 @@
-rendering
+script
 scriptEventListenerOpenCloseRow
 
 	"Return a function - Add event listener for opening and closing details. Use in conjunction with the format function."
 	
-	| jq js jsCondIsShown jsFunction jsCondIsShownTrue jsCondIsShownFalse jsField jsFactorsPlot jsPlot urlf urlj |
+	| jq js jsCondIsShown jsFunction jsCondIsShownTrue jsCondIsShownFalse jsField jsPlot urlf urlj |
 	js := JSStream new.
 	jq := JQueryClass new.
 	
@@ -21,19 +21,11 @@ scriptEventListenerOpenCloseRow
 		( ( JSStream on: 'tr' ) call: 'addClass'  with: 'shown' ),
 		( ( ( jq this next: 'td' ) text ) assignLocalTo: 'field' ).
 	jsField := ( ( jq this next: 'td' ) text ).
-	jsFactorsPlot :=
-		( ( jq ajax ) type: 'GET'; url: ( JSStream on: urlf, ' + field' ); 
-			onSuccess: ( ( 
-				( JSStream on: 'displayFactorsPlot(data, field)' ) 
-					condition: ( JSStream on: 'typeof( $.parseJSON(data)[0] ) == ''string''' ) 
-					else: ( 
-						( JSStream on: 'displaySummary(data, field)' )
-					)
-				) asFunction: #(data status) ) ).
+
 	jsPlot :=
 		( ( jq ajax ) type: 'GET'; url: ( JSStream on: urlj, ' + field' ); 
 			onSuccess: ( ( 
-				( JSStream on: 'displayPlot(data, field)' ) 
+				( JSStream on: 'displayPlot(data, field); displayRangePlot(data, field)' )
 					condition: ( JSStream on: 'typeof( $.parseJSON(data)[0] ) == ''number''' ) 
 					else: ( 
 						( JSStream on: 'displaySummary(data, field)' )

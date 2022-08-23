@@ -1,4 +1,4 @@
-rendering
+script
 scriptFormatFunction
 
 	| jsn formatDataNumber formatDataString st1 st2 |
@@ -23,7 +23,55 @@ scriptFormatFunction
 							id: ( JSStream on: '${d.variable}Div' );
 							style: 'height: 270px; padding: 0 0;background-color: #e0f2f1;'.
 						html tableData 
-							with:	( JSStream on: '${d.min}' ).
+							class: 'data-range';
+							with: [
+								html table 
+									attributeAt: 'border' put: '0'; 
+									with: [ 
+										html tableRow
+											style: 'background-color: #e0f2f1';
+											with: [  
+												html tableHead
+													with: [
+														html tableHeading 
+															style: 'background-color: #e0f2f1; font-weight:600; font-size: 1.1em;';
+															with: 'Q1 - 25%' .
+														html tableHeading 
+															style: 'background-color: #e0f2f1; font-weight:600; font-size: 1.1em;';
+															with: 'Q2 - 50%' .
+														html tableHeading 
+															style: 'background-color: #e0f2f1; font-weight:600; font-size: 1.1em;';
+															with: 'Q3 - 75%' .	
+														html tableHeading 
+															style: 'background-color: #e0f2f1; font-weight:600; font-size: 1.1em;';
+															with: 'Std Div' .																											]
+											].
+										html tableRow
+											style: 'background-color: #e0f2f1';
+											with: [  
+												html tableData
+													style: 'background-color: #e0f2f1; font-weight:400; font-size: 1.1em;';
+													with:	( JSStream on: '${d.q1}' ).	
+												html tableData
+													style: 'background-color: #e0f2f1; font-weight:400; font-size: 1.1em;';
+													with:	( JSStream on: '${d.q2}' ).
+												html tableData
+													style: 'background-color: #e0f2f1; font-weight:400; font-size: 1.1em;';
+													with:	( JSStream on: '${d.q3}' ).	
+												html tableData
+													style: 'background-color: #e0f2f1; font-weight:400; font-size: 1.1em;';
+													with:	( JSStream on: '${d.sd}' ).										
+											].
+										html tableRow
+											style: 'background-color: #e0f2f1; height:140px;';
+											with: [  
+												html tableData 
+													id: ( JSStream on: '${d.variable}RangeDataGraph' );
+													attributeAt: 'colspan' put: 4.
+											]
+									]
+								].
+							"with:	( JSStream on: '${d.max}' )."
 					]
 				].
 	].

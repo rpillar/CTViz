@@ -1,27 +1,26 @@
 script
-scriptFactorsChart
+scriptSummaryRangeChart
 
 	| chart config div jq jsn layout s1 t1 |
-	"chart not used - left here in case I get round to implementing ....."
 
 	jq := JQueryClass new.
 	
-	jsn := JSNamedFunction named: 'displayFactorsPlot'.
+	jsn := JSNamedFunction named: 'displayRangePlot'.
 	jsn return: true.
-	jsn arguments: #(d1 d2 field).
+	jsn arguments: #(data field).
 	
-	div := ( JSStream on: 'field + ''FactorsDiv''' ).
+	div := ( JSStream on: 'field + ''RangeDataGraph''' ).
 	
 	t1 := PlotlyTrace new.
-	t1 x: ( JSStream on: '$.parseJSON(da1)' ).
-	t1 type: 'bar'.
-	t1 x: ( JSStream on: '$.parseJSON(d1)' ).
-	t1 y: ( JSStream on: '$.parseJSON(d2)' ).
+	t1 x: ( JSStream on: '$.parseJSON(data)' ).
+	t1 type: 'box'.
+	t1 boxmean: true.
+	t1 marker color: '#FF851B'.
+	t1 opacity: 0.5.
 	
 	layout := PlotlyLayout new.
-	layout title text: ( JSStream on: 'field' ).
-	layout title font size: 22.
-	layout bargap: 0.05.
+	layout margin l: 0; r: 0; b: 0; t:0.
+	layout xaxis showline: false.
 	layout paper_bgcolor: '#e0f2f1'.
 	layout plot_bgcolor: '#e0f2f1'.
 		

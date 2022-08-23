@@ -49,7 +49,12 @@ renderContentOn: html
 												with: [
 													html anchor
 														style: 'font-size: 1.5rem;';
-														url: '';
+														onClick: ( ( html jQuery ajax )
+															script: [ :s |
+																s << ( ( s jQuery id: 'summary-data-container' ) hide ).
+																s << ( ( s jQuery id: 'analytics-data-conainer' ) show ).
+															]
+														);
 														with: 'Analytics'
 												].	
 										].
