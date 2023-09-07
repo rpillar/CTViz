@@ -3,6 +3,7 @@ receiveFile
 
 	| csv |
 	
+	"get the file and load the data into a dataframe"
 	csv := CTCSV new.
 	csv delimiter: self session delimiter.
 	csv loadFromCSVFile: self fileName.
