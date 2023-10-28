@@ -1,6 +1,10 @@
 rendering
 renderContentOn: html 
 
+	| activeUnderline disabledUnderline |
+	activeUnderline := Dictionary newFrom: { 'border-bottom' -> '3px solid lightblue' }.
+	disabledUnderline := Dictionary newFrom: { 'border-bottom' -> '3px solid black' }.
+
 	html div 
 		class: 'navbar-fixed';
 		with: [ 
@@ -36,11 +40,15 @@ renderContentOn: html
 														style: 'font-size: 1.5rem;';
 														onClick: ( ( html jQuery ajax )
 															script: [ :s |
+																s << ( ( s jQuery id: 'analytics-data-container' ) hide ).
 																s << ( ( s jQuery id: 'summary-data-container' ) show ). 
+																s << ( ( s jQuery id: 'navbar-analytics-underline' ) css:  disabledUnderline ).
+																s << ( ( s jQuery id: 'navbar-summary-underline' ) css:  activeUnderline ).
 															]
 														);
 														with: [ 
 															html span
+																id: 'navbar-summary-underline';
 																style: 'border-bottom: 3px solid lightblue;';
 																with: 'Summary'
 														]
@@ -52,10 +60,17 @@ renderContentOn: html
 														onClick: ( ( html jQuery ajax )
 															script: [ :s |
 																s << ( ( s jQuery id: 'summary-data-container' ) hide ).
-																s << ( ( s jQuery id: 'analytics-data-conainer' ) show ).
+																s << ( ( s jQuery id: 'analytics-data-container' ) show ).
+																s << ( ( s jQuery id: 'navbar-analytics-underline' ) css:  activeUnderline ).
+																s << ( ( s jQuery id: 'navbar-summary-underline' ) css:  disabledUnderline ).
 															]
 														);
-														with: 'Analytics'
+														with: [
+															html span
+																id: 'navbar-analytics-underline';
+																style: 'border-bottom: 3px solid black;';
+																with: 'Analytics'
+														]
 												].	
 										].
 								].

@@ -70,7 +70,7 @@ renderLoadDatasetFormOn: html
 											s << ( ( s jQuery id: 'load-file' ) attributeAt: 'disabled' put: 'disabled' ).
 											s << ( ( s jQuery class: 'load-file-button' ) text: 'File Loading' ).
 											s << ( ( s jQuery class: 'progress' ) show ).
-											s << ( ( s jQuery id: 'ctviz-body' ) load html: [ :r | self renderSummmayDatasetOn: r ] ).
+											s << ( ( s jQuery id: 'ctviz-body' ) load html: [ :r | self renderPageComponentOn: r ] ).
 											s << ( ( s jQuery class: 'active-navbar' ) show ).
 										]
 										ifFalse: [  

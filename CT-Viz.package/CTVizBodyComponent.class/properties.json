@@ -9,7 +9,9 @@
 		"dataframe",
 		"delimiter",
 		"fileName",
-		"messageComponent"
+		"analyticsComponent",
+		"messageComponent",
+		"summaryComponent"
 	],
 	"name" : "CTVizBodyComponent",
 	"type" : "normal"

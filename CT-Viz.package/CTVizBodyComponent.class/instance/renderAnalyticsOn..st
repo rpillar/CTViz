@@ -10,6 +10,6 @@ renderAnalyticsOn: html
 				with: [  
 					html paragraph 
 						style: 'font-size: 2rem; font-weight:300;';
-						with: 'Analyise your dataset -.'
+						with: 'Analyse your dataset -.'
 				].
 		].
