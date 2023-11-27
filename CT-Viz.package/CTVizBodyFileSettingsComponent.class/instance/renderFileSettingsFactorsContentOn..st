@@ -10,6 +10,7 @@ renderFileSettingsFactorsContentOn: html
 							html radioButton
 								id: 'factors-no';
 								class: 'with-gap';
+								attributeAt: 'disabled' put: 'disabled';
 								attributeAt: 'name' put: 'factors';
 								attributeAt: 'checked' put: ( ( ( self session factors ) = 'N' ) ifTrue: [ 'checked' ] );
 								onClick: ( html jQuery ajax 
@@ -30,6 +31,7 @@ renderFileSettingsFactorsContentOn: html
 							html radioButton
 								id: 'factors-yes';
 								class: 'with-gap';
+								attributeAt: 'disabled' put: 'disabled';
 								attributeAt: 'name' put: 'factors';
 								attributeAt: 'checked' put: ( ( ( self session factors ) = 'Y' ) ifTrue: [ 'checked' ] );
 								onClick: ( html jQuery ajax 

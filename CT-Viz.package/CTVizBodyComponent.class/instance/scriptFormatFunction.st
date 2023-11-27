@@ -3,7 +3,7 @@ scriptFormatFunction
 
 	| jsn formatDataNumber formatDataString st1 st2 |
 	"Provide a function to specify the format of the child rows. Because for differing applications the child rows will almost certainly be different this should just be taken
-	 as an example. Returns a HTML template string."
+	 as an example. Returns a HTML template string. This method is tooooooo long."
 	
 	jsn := JSNamedFunction named: 'format'.
 	jsn arguments: #(d).

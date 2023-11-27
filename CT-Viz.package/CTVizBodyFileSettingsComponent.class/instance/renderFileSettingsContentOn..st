@@ -24,7 +24,7 @@ renderFileSettingsContentOn: html
 						with: [ 
 							html paragraph
 								style: 'border-bottom: 3px solid lightblue; font-size: 2rem;';
-								with: 'Strings as Factors'.
+								with: 'Strings as Factors (Disabled)'.
 							self renderFileSettingsFactorsContentOn: html.
 						].
 				].
